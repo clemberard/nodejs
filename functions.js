@@ -1,4 +1,4 @@
-import { add, highestNumber, removeVowels, orderByAsc, numToLetters, wordWithVowelsCaps, valueOfKeyInArray, NumberOfVowels, wordWithConsonantsCaps } from "./src/utils/tp1_module.js";
+import { add, highestNumber, removeVowels, orderByAsc, numToLetters, wordWithVowelsCaps, valueOfKeyInArray, NumberOfVowels, wordWithConsonantsCaps } from "./src/utils/functions_module.js";
 
 const testWord1 = "Bonjour";
 const testWord2 = "Hello";

@@ -29,18 +29,18 @@ export function numToLetters(number) {
 		return "Nombre invalide, doit être compris entre 0 et 999";
 	}
 
-	let units2Letters = ["", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"],
-		tens2Letters = ["", "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante", "quatre-vingt", "quatre-vingt"];
-
-	let units = number % 10,
-		tens = ((number % 100) - units) / 10,
-		hundreds = ((number % 1000) - (number % 100)) / 100;
-
-	let unitsOut, tensOut, hundredsOut;
-
 	if (number === 0) {
 		return "zéro";
 	} else {
+		let units2Letters = ["", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"],
+			tens2Letters = ["", "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante", "quatre-vingt", "quatre-vingt"];
+
+		let units = number % 10;
+		let tens = ((number % 100) - units) / 10;
+		let hundreds = ((number % 1000) - (number % 100)) / 100;
+
+		let unitsOut, tensOut, hundredsOut;
+
 		// Traitement des unités
 
 		unitsOut = (units === 1 && tens > 0 && tens !== 8 ? "et-" : "") + units2Letters[units];

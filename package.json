@@ -1,17 +1,18 @@
 {
-  "name": "isitech2324",
-  "version": "1.0.0",
-  "description": "Node.js est un environnement d'exécution. Node.js contient une bibliothèque de serveur HTTP intégrée, ce qui rend possible de construire des serveurs web en temps réel et des applications réseau en utilisant JavaScript. Node.js est utilisé par des entreprises telles que Microsoft, LinkedIn, et Yahoo.",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "tp1" : "nodemon tp1.js"
-  },
-  "author": "clement",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.0"
-  }
+	"name": "isitech2324",
+	"version": "1.0.0",
+	"description": "Node.js est un environnement d'exécution. Node.js contient une bibliothèque de serveur HTTP intégrée, ce qui rend possible de construire des serveurs web en temps réel et des applications réseau en utilisant JavaScript. Node.js est utilisé par des entreprises telles que Microsoft, LinkedIn, et Yahoo.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon index.js",
+		"functions": "nodemon functions.js",
+    "tableaux": "nodemon tableaux.js"
+	},
+	"author": "clement",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^3.1.0"
+	}
 }
