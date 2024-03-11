@@ -1,15 +1,7 @@
-const fruits = ["apple", "banana", "cherry"];
-fruits.push("watermelon");
+// import fonction divide from math.js avec la syntaxe commonJS
+import { divide as division } from "./src/utils/math.js";
 
-const clem = {
-	firstname: "Clément",
-	lastname: "Berard",
-	age: 20,
-	isStudent: true,
-	hobbies: ["coding", "gaming", "reading"],
-};
+const a = 45;
+const b = 4;
 
-// spread operator
-const clemCopy = { ...clem };
-
-console.log(clemCopy);
+console.log(division(a, b));

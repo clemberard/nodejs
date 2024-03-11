@@ -84,7 +84,7 @@ const auCarre3 = x => x * x;
 console.log(auCarre(5));
 ```
 
-### 3.4. Tableaux
+### 3.4. Tableaux et objets
 
 ```javascript
 const fruits = ["apple", "banana", "cherry"];
@@ -102,4 +102,41 @@ const clem = {
 const clemCopy = { ...clem };
 
 console.log(clemCopy);
+```
+
+## Modules
+
+### 4.1. Introduction
+
+Un module est un ensemble de fonctions et de variables qui peuvent être inclus dans une application. Les modules sont utilisés pour organiser le code et pour éviter les conflits de noms.
+
+### 4.2. Création d'un module
+
+Pour créer un module, créez un fichier contenant les fonctions et les variables que vous souhaitez inclure dans le module. Exportez les fonctions et les variables que vous souhaitez rendre accessibles à d'autres fichiers.
+
+```javascript
+// math.js
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+
+```
+
+### 4.3. Exportation d'un module
+
+Il existe 2 façons d'exporter un module en Node.js. Vous pouvez exporter un module en utilisant `module.exports` ou en utilisant `exports` :
+- La syntaxe CommonJS `module.exports` est utilisée pour exporter un module en Node.js. (utilisé dans Node.js)
+- La syntaxe ES6+ `exports` est utilisée pour exporter un module en JavaScript. (utilisé dans les navigateurs)
+
+```javascript
+// math.js
+
+// Syntaxe CommonJS
+module.exports = {
+  add,
+  subtract,
+};
+
+// Syntaxe ES6+
+exports.add = add;
+exports.subtract = subtract;
 ```
