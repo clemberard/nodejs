@@ -84,6 +84,17 @@ const auCarre3 = x => x * x;
 console.log(auCarre(5));
 ```
 
+Un callback de fonctions est une fonction qui est passée en argument à une autre fonction. Les callbacks sont souvent utilisés pour exécuter du code après qu'une opération asynchrone a été terminée.
+
+```javascript
+function doSomething(callback) {
+	setTimeout(() => {
+		console.log('I did something');
+		callback('First data');
+	}, 1000);
+}
+```
+
 ### 3.4. Tableaux et objets
 
 ```javascript
@@ -139,4 +150,31 @@ module.exports = {
 // Syntaxe ES6+
 exports.add = add;
 exports.subtract = subtract;
+```
+
+## Express
+
+### 5.1. Introduction
+
+Express est un framework web pour Node.js. Express est utilisé pour créer des applications web et des API. Express est utilisé par des entreprises telles que IBM, Uber, et Accenture.
+
+### 5.2. Installation d'Express
+
+Pour installer Express, ouvrez une fenêtre de commande et tapez `npm install express`.
+
+### 5.3. Création d'un serveur web
+
+Pour créer un serveur web avec Express, créez un fichier contenant le code suivant :
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+	res.send('Hello, world!');
+});
+
+app.listen(3000, () => {
+	console.log('Server is running on port 3000');
+});
 ```
