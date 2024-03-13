@@ -181,3 +181,4 @@ app.listen(3000, () => {
 
 ## Lexique
 
+- Middleware : C'est une logique qui se cale entre la requete et la reponse
