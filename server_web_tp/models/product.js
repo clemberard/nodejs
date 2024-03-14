@@ -8,6 +8,10 @@ export default class Product {
 		this.imageUrl = imageUrl;
 	}
 
+	/**
+	 * 
+	 * @returns {Promise<Array<Product>>}
+	 */
 	static async getAllProducts() {
 		try {
 			const connection = await db.getConnection();
@@ -19,6 +23,11 @@ export default class Product {
 		}
 	}
 
+	/**
+	 * 
+	 * @param {*} id 
+	 * @returns  {Promise<Product>}
+	 */
 	static async getProductById(id) {
 		try {
       const connection = await db.getConnection();
@@ -30,6 +39,10 @@ export default class Product {
     }
 	}
 
+	/**
+	 * 
+	 * @returns {Promise}
+	 */
 	async createProduct() {
 		return db.execute("INSERT INTO products (name, price, imageUrl) VALUES (?, ?, ?)", [this.name, this.price, this.imageUrl]);
 	}
