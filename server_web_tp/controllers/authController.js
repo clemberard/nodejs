@@ -21,7 +21,7 @@ export const authController = {
 			return;
 		}
 		User.createUser(req.body.email, req.body.password, req.body.firstName, req.body.lastName).then((id) => {
-			res.redirect("/auth/signin", { error: "" });
+			res.render("auth/signin", { error: "" });
 		});
 	},
 	login: async (req, res) => {

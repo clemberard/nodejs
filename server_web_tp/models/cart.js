@@ -38,4 +38,20 @@ export default class Cart {
 	static addProductToCart(id_cart, id_product, quantity = 1) {
 		return db.execute("INSERT INTO cart_product (id_cart, id_product, quantite) VALUES (?, ?, ?)", [id_cart, id_product, quantity]);
 	}
+
+	static deleteCart(id_cart) {
+		return db.execute("DELETE FROM cart WHERE id = ?", [id_cart]);
+	}
+
+	static async deleteCartByUserId(user_id) {
+		const cart = await Cart.getCart(user_id);
+		if (cart[0].length === 0) {
+			return Promise.reject(new Error("No cart found"));
+		}
+		return db.execute("DELETE FROM cart WHERE user_id = ?", [user_id]);
+	}
+
+	static deleteCartProduct(id_cart, id_product) {
+		return db.execute("DELETE FROM cart_product WHERE id_cart = ? AND id_product = ?", [id_cart, id_product]);
+	}
 }
