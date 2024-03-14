@@ -3,6 +3,7 @@ import shopRouter from "./routes/shop.js";
 import productRouter from "./routes/products.js";
 import authRouter from "./routes/auth.js";
 import cartRouter from "./routes/cart.js";
+import adminRouter from "./routes/admin.js";
 import session from "express-session";
 
 const app = new Express();
@@ -46,6 +47,8 @@ app.use("/products", productRouter);
 app.use("/auth", authRouter);
 
 app.use("/cart", cartRouter);
+
+app.use("/admin", adminRouter);
 
 app.listen(3000, () => {
 	console.log("http://localhost:3000/");
