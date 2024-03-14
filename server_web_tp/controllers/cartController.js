@@ -18,13 +18,10 @@ export const cartController = {
 			const cart = await Cart.getCart(req.session.userId);
 			const result = await Cart.removeProductFromCart(cart[0][0].id, id_product);
 
-			console.log(result);
-
 			req.session.cart = req.session.cart.filter((product) => product !== id_product);
 
 			res.redirect("/cart");
 		} catch (error) {
-			console.error(error);
 			res.status(500).send("Une erreur est survenue lors du retrait du produit du panier.");
 		}
 	},
@@ -75,7 +72,6 @@ export const cartController = {
 
 	checkout: async (req, res) => {
 		const CartUser = await Cart.getCart(req.session.userId);
-		console.log(CartUser);
 		const idCartUser = CartUser[0][0].id;
 		Cart.getProductsFromCart(idCartUser).then((products) => {
 			const number_products = products.length;
@@ -88,7 +84,6 @@ export const cartController = {
 		const CartUser = await Cart.getCart(req.session.userId);
 		const idCartUser = CartUser[0][0].id;
 		Cart.deleteCart(idCartUser).then((result) => {
-			console.log(result);
 			req.session.cart = [];
 			res.render("cart/success");
 		});

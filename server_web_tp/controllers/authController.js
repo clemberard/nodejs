@@ -26,7 +26,6 @@ export const authController = {
 	},
 	login: async (req, res) => {
 		User.getUserByMail(req.body.email).then((user) => {
-			console.log(user);
 			if (user.length !== 0 && user[0].password === req.body.password) {
 				req.session.userId = user[0].id;
 				req.session.userName = user[0].first_name;
