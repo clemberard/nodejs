@@ -1,10 +1,8 @@
 import Express from "express";
+import { shopController } from "../controllers/shopController.js";
 
 const shopRouter = Express.Router();
 
-shopRouter.get("/", (req, res) => {
-	console.log("req.body : " + JSON.stringify(req.body));
-	res.render("shop", {});
-});
+shopRouter.get("/", shopController.allshops);
 
 export default shopRouter;

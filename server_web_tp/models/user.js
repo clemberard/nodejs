@@ -15,7 +15,7 @@ export default class User {
   }
 
   static async getUserByMail(mail) {
-    const user = await db.query("SELECT password FROM admin WHERE mail = ?", [mail]);
+    const user = await db.query("SELECT * FROM admin WHERE mail = ?", [mail]);
     return user[0];
   }
 

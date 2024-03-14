@@ -1,19 +1,10 @@
 import Express from "express";
-import Product from "../models/product.js";
+import { productController } from "../controllers/productController.js";
 
 const productsRouter = Express.Router();
 
-productsRouter.get("/", (req, res) => {
-  Product.getAllProducts().then((products) => {
-    res.render("products", { products });
-  });
-});
+productsRouter.get("/", productController.allProducts);
 
-productsRouter.get("/:id", (req, res) => {
-  const productId = req.params.id;
-  Product.getProductById(productId).then((product) => {
-		res.render("product", { product });
-	});
-});
+productsRouter.get("/:id", productController.detailProduct);
 
 export default productsRouter;

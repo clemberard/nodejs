@@ -9,10 +9,13 @@
 		<title>Shop</title>
 	</head>
 	<body>
-		<%- include('include/navbar.ejs') %>
+		<%- include('../include/navbar.ejs') %>
 		<div class="container mt-5">
 			<h2 class="mb-5">Se connecter</h2>
 			<form action="/auth/login" method="post">
+				<% if (error) { %>
+				<div class="alert alert-danger" role="alert"><%= error %></div>
+				<% } %>
 				<div class="row mb-3">
 					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
 					<div class="col-sm-10">

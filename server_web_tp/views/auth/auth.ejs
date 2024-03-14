@@ -9,9 +9,14 @@
 		<title>Shop</title>
 	</head>
 	<body>
-		<%- include('include/navbar.ejs') %>
+		<%- include('../include/navbar.ejs') %>
 		<div class="container">
 			<h1 class="my-5 text-center">Authentification</h1>
+			<% if (error) { %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12 p-3">
 					<div class="card w-100 shadow rounded element-to-zoom">

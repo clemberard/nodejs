@@ -9,10 +9,13 @@
 		<title>Shop</title>
 	</head>
 	<body>
-		<%- include('include/navbar.ejs') %>
+		<%- include('../include/navbar.ejs') %>
 		<div class="container mt-5">
 			<h2 class="mb-5">Création de compte</h2>
 			<form class="row g-3" method="post" action="/auth/create">
+				<% if (error) { %>
+				<div class="alert alert-danger" role="alert"><%= error %></div>
+				<% } %>
 				<div class="col-md-6">
 					<label for="inputLastName" class="form-label">Nom</label>
 					<input type="text" name="lastName" class="form-control" id="inputLastName" />

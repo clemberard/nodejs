@@ -1,35 +1,18 @@
 import Express from "express";
-import User from "../models/user.js";
+import { authController } from "../controllers/authController.js";
 
 const authRouter = Express.Router();
 
-authRouter.get("/", (req, res) => {
-	res.render("auth", {});
-});
+authRouter.get("/", authController.auth);
 
-authRouter.get("/signin", (req, res) => {
-	res.render("signin");
-});
+authRouter.get("/signin", authController.signin);
 
-authRouter.get("/signup", (req, res) => {
-	res.render("signup");
-});
+authRouter.get("/signup", authController.signup);
 
-authRouter.post("/create", (req, res) => {
-	User.createUser(req.body.email, req.body.password, req.body.firstName, req.body.lastName).then((id) => {
-		res.redirect("/auth/signin");
-	});
-});
+authRouter.post("/create", authController.create);
 
-authRouter.post("/login", (req, res) => {
-	User.getUserByMail(req.body.email).then((user) => {
-		if (user && user[0].password === req.body.password) {
-			req.session.userId = user.id;
-			res.redirect("/");
-		} else {
-			res.redirect("/auth/signin");
-		}
-	});
-});
+authRouter.post("/login", authController.login);
 
+authRouter.get("/signout", authController.signout);
+ 
 export default authRouter;

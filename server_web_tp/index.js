@@ -26,7 +26,9 @@ app.use(Express.json()); // Middleware pour parser le JSON
 app.use(Express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-	console.log("Je suis un middleware qui s'exécute à chaque requête");
+	console.log(req.session);
+	res.locals.userName = req.session.userName;
+	res.locals.userId = req.session.userId;
 	next();
 });
 
