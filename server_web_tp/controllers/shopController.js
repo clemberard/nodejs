@@ -1,5 +1,5 @@
 export const shopController = {
 	allshops: async (req, res) => {
-		res.render("shop", {});
+		res.render("shop/shop", {});
 	}
 };

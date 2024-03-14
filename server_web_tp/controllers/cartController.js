@@ -65,7 +65,7 @@ export const cartController = {
 		}
 		Cart.getProductsFromCart(req.session.userId).then((products) => {
 			console.log(products);
-			res.render("cart", { products: products });
+			res.render("cart/cart", { products: products });
 		});
 	},
 };

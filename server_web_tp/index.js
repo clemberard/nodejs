@@ -26,14 +26,13 @@ app.use(Express.json()); // Middleware pour parser le JSON
 app.use(Express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-	console.log(req.session);
 	res.locals.userName = req.session.userName;
 	res.locals.userId = req.session.userId;
 	next();
 });
 
 app.get("/", (req, res, next) => {
-	res.render("home", {});
+	res.render("home/home", {});
 });
 
 app.post("/", (req, res, next) => {
