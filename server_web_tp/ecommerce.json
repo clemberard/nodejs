@@ -1,0 +1,44 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"ecommerce"},
+{"type":"table","name":"admin","database":"ecommerce","data":
+[
+{"id":"1","mail":"medhi.terrane@yahoo.com","password":"123","first_name":"Medhi","last_name":"Terrané"},
+{"id":"3","mail":"charles.atan@gmail.com","password":"123","first_name":"Charles","last_name":"Atan"},
+{"id":"6","mail":"ouais.ouais@ouais.ouais","password":"123","first_name":"mateo","last_name":"mat"}
+]
+}
+,{"type":"table","name":"cart","database":"ecommerce","data":
+[
+{"id":"4","user_id":"3","date_create":"2024-03-14"},
+{"id":"5","user_id":"1","date_create":"2024-03-14"}
+]
+}
+,{"type":"table","name":"cart_product","database":"ecommerce","data":
+[
+{"id":"16","id_cart":"2","id_product":"6","quantite":"1"},
+{"id":"17","id_cart":"3","id_product":"2","quantite":"1"},
+{"id":"18","id_cart":"4","id_product":"2","quantite":"1"},
+{"id":"19","id_cart":"5","id_product":"3","quantite":"1"}
+]
+}
+,{"type":"table","name":"products","database":"ecommerce","data":
+[
+{"id":"1","name":"Clavier mécanique","price":"50","description":"Un clavier mécanique pour les gamers","imageUrl":""},
+{"id":"2","name":"Souris sans fil","price":"20","description":"Une souris sans fil pour les gamers","imageUrl":""},
+{"id":"3","name":"Casque audio","price":"30","description":"Un casque audio pour les gamers","imageUrl":""},
+{"id":"4","name":"Tapis de souris","price":"10","description":"Un tapis de souris pour les gamers","imageUrl":""},
+{"id":"5","name":"PC Gamer","price":"800","description":"Un PC Gamer pour les gamers","imageUrl":""},
+{"id":"6","name":"Console de jeu","price":"300","description":"Une console de jeu pour les gamers","imageUrl":""},
+{"id":"7","name":"Manette de jeu","price":"50","description":"Une manette de jeu pour les gamers","imageUrl":""},
+{"id":"8","name":"Jeux vidéo","price":"60","description":"Un jeu vidéo pour les gamers","imageUrl":""},
+{"id":"9","name":"Chaise de gamer","price":"150","description":"Une chaise de gamer pour les gamers","imageUrl":""},
+{"id":"10","name":"Ecran PC","price":"200","description":"Un écran PC pour les gamers","imageUrl":""}
+]
+}
+,{"type":"table","name":"shops","database":"ecommerce","data":
+[
+
+]
+}
+]
